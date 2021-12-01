@@ -3,20 +3,18 @@ import 'package:flutter/material.dart';
 
 late AudioHandler _audioHandler;
 
-void main() async {
-  _audioHandler = await AudioService.init(
-    builder: () => MyAudioHandler(),
-    config: const AudioServiceConfig(
-      androidNotificationChannelId: 'com.my.id',
-      androidNotificationChannelName: 'my playback',
-    ),
-  );
+void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -53,6 +51,21 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
+  void initState() async {
+    Future.delayed(const Duration(seconds: 5), () async {
+      _audioHandler = await AudioService.init(
+        builder: () => MyAudioHandler(),
+        config: const AudioServiceConfig(
+          androidNotificationChannelId: 'com.my.id',
+          androidNotificationChannelName: 'my playback',
+        ),
+      );
+    });
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -83,9 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class MyAudioHandler extends BaseAudioHandler with QueueHandler, SeekHandler {
   @override
-  Future<void> play() async {
-    //
-  }
+  Future<void> play() async {}
 
   @override
   Future<void> pause() async {}

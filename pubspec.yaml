@@ -32,6 +32,8 @@ dependencies:
 
   audio_service: ^0.18.1
 
+  audio_session: ^0.1.6+1
+
   push_notification:
     git:
       url: https://github.com/surfstudio/flutter-push-notification.git
