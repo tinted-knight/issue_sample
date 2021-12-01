@@ -30,7 +30,7 @@ packages:
     source: hosted
     version: "0.1.1"
   audio_session:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: audio_session
       url: "https://pub.dartlang.org"
@@ -117,7 +117,7 @@ packages:
       name: flutter_cache_manager
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.3"
+    version: "3.3.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -197,7 +197,7 @@ packages:
       name: path_provider_android
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.7"
+    version: "2.0.9"
   path_provider_ios:
     dependency: transitive
     description:
@@ -261,22 +261,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
-  push_notification:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: v2-embedding-migration
-      resolved-ref: caf236f36fc618c6de9a8280ea6f3abed3beff60
-      url: "https://github.com/surfstudio/flutter-push-notification.git"
-    source: git
-    version: "1.1.0"
   rxdart:
     dependency: transitive
     description:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.27.2"
+    version: "0.27.3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -372,7 +363,7 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.3.0"
+    version: "2.3.1"
   xdg_directories:
     dependency: transitive
     description:
