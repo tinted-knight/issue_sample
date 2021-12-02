@@ -52,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() async {
+    // Looks like having Statefull widget is important to reproduce crash
     Future.delayed(const Duration(seconds: 5), () async {
       _audioHandler = await AudioService.init(
         builder: () => MyAudioHandler(),
